@@ -1,0 +1,9 @@
+mqtt:
+    broker: MQTT_HOST
+    port: MQTT_PORT
+    username: MQTT_USER
+    password: MQTT_PASSWORD
+
+waves:
+  - name: "DEVICE_NAME"
+    addr: DEVICE_MAC_ADDRESS

@@ -1,0 +1,48 @@
+[build-system]
+requires = [
+  "setuptools>=61.0",
+  "airthings==3.2",
+  "paho-mqtt>=1.3.1",
+  "PyYAML>=3.12",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airthings-mqtt"
+version = "0.1.0"
+authors = [
+  { name="Panos Rontogiannis", email="p.g.ronto@gmail.com" },
+]
+description = "Fetch readings/measurements from the Wave device and publish them to an MQTT server so that Home Assistant or some other application can consume them"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Operating System :: POSIX :: Linux",
+]
+dependencies = [
+  "airthings==3.2",
+  "paho-mqtt>=1.3.1",
+  "PyYAML>=3.12",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/prontog/airthings-mqtt"
+"Bug Tracker" = "https://github.com/prontog/airthings-mqtt/issues"
+
+[project.scripts]
+airthings-mqtt = "airthingsmqtt.__main__:main"
+
+[tool.pylint]
+max-line-length = 88
+disable = [
+  "C0103", # (invalid-name)
+  "C0114", # (missing-module-docstring)
+  "C0115", # (missing-class-docstring)
+  "C0116", # (missing-function-docstring)
+  "C0209", # (consider-using-f-string)
+  "C0301", # (invalid-name)
+  "R0903", # (too-many-arguments)
+  "R0913", # (too-few-public-methods)
+]
